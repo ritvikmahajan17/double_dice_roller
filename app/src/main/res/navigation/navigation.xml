@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.android.navigation.HomeFragment"
+        android:label="@string/home_page_title"
+        tools:layout="@layout/home_page">
+        <action
+            android:id="@+id/action_homeFragment_to_twoDiceFragment"
+            app:destination="@id/twoDiceFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_oneDiceFragment2"
+            app:destination="@id/oneDiceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/oneDiceFragment"
+        android:name="com.example.android.navigation.OneDiceFragment"
+        android:label="@string/one_dice_fragment_title"
+        tools:layout="@layout/one_dice_fragment">
+        <action
+            android:id="@+id/action_oneDiceFragment_to_statsFragment"
+            app:destination="@id/statsFragment"
+            app:popUpTo="@id/oneDiceFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/twoDiceFragment"
+        android:name="com.example.android.navigation.TwoDiceFragment"
+        android:label="@string/two_dice_fragment_title"
+        tools:layout="@layout/two_dice_fragment">
+        <action
+            android:id="@+id/action_twoDiceFragment_to_statsFragment"
+            app:destination="@id/statsFragment"
+            app:popUpTo="@id/twoDiceFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/AboutFragment"
+        android:name="com.example.android.navigation.AboutFragment"
+        android:label="@string/about_pageName"
+        tools:layout="@layout/about_fragment">
+        <action
+            android:id="@+id/action_aboutFragment2_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/statsFragment"
+        android:name="com.example.android.navigation.StatsFragment"
+        android:label="@string/Stats_pageName"
+        tools:layout="@layout/stats_layout">
+        <argument
+            android:name="countTotal1"
+            app:argType="integer" />
+        <argument
+            android:name="countSix"
+            app:argType="integer" />
+        <argument
+            android:name="countTotal2"
+            app:argType="integer" />
+        <argument
+            android:name="countTwelve"
+            app:argType="integer" />
+    </fragment>
+</navigation>

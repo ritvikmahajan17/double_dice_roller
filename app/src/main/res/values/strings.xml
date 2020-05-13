@@ -1,0 +1,64 @@
+<!--
+  ~ Copyright 2018, The Android Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<resources>
+    <string name="app_name">Double Dice Roller</string>
+    <string name="game_over">Game Over</string>
+    <string name="try_again">Try Again?</string>
+    <string name="position">Position</string>
+    <string name="select_an_avatar">Select an Avatar</string>
+    <string name="android_trivia">Android Trivia</string>
+    <string name="about_text">Dice Rolling app which has two modes, 1 Dice mode and 2 dice Mode\n\nClick on required mode to roll dices and have fun!!!\n\nMade by RITVIK MAHAJAN</string>
+    <string name="rules_text">Select the answer from the options given. Each time you get an answer correct, you advance to the next question.\n\nIf you get the answer wrong, your game ends! You can return to the title screen using up or back from within the game screen, and this will also end your game.</string>
+    <string name="rules">Rules</string>
+    <string name="about">About</string>
+    <string name="trivia_hint">Trivia Hint</string>
+    <string name="title_android_trivia_question">Android Trivia (%1$d/%2$d)</string>
+    <string name="title_about_trivia">About Trivia</string>
+    <string name="title_trivia_rules">Trivia Rules</string>
+    <string name="share_success_text_two">I just got a perfect 12 in TWO DICE mode on DOUBLE DICE ROLLER #DoubleDiceRoller #RitvikMahajan</string>
+    <string name="share_success_text_one">I just got a perfect 6 in ONE DICE mode onDOUBLE DICE ROLLER #DoubleDiceRoller #RitvikMahajan</string>
+    <string name="share_text_one">I got %1$d 6\'s out of %2$d in One Dice Mode #DoubleDiceRoller #RitvikMahajan</string>
+    <string name="share_text_two">I got %1$d 12\'s out of %2$d in Two Dice mode #DoubleDiceRoller #RitvikMahajan</string>
+    <string name="submit_button">Submit</string>
+    <string name="congratulations">Congratulations!</string>
+    <string name="share">Share</string>
+    <string name="sharing_not_available">Sharing Not Available</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="total_text">TOTAl</string>
+    <string name="rollbutton_text">ROLL</string>
+    <string name="total_add_text">TOTAL</string>
+    <string name="home_dice_image">Home Dice</string>
+    <string name="Choose_num_of_dices">How many Dices do you wanna roll?</string>
+    <string name="button_one_text">1 Dice</string>
+    <string name="button_two_text">2 Dices</string>
+    <string name="button_three_text">3 Dices</string>
+    <string name="home_page_title">HOME</string>
+    <string name="one_dice_fragment_title">One Dice</string>
+    <string name="two_dice_fragment_title">Two Dices</string>
+    <string name="stats_text1">1 Dice Mode</string>
+    <string name="stats_text2">2 Dice Mode</string>
+    <string name="One_Dice_stats">Number of times rolled: \n\nNumber of times gotten 6:</string>
+    <string name="two_Dice_stats">Number of times rolled: \n\nNumber of times gotten 12:</string>
+    <string name="Menu_stats">Stats</string>
+    <string name="stats_button">Check Stats</string>
+    <string name="two_twelve_text">value</string>
+    <string name="Stats_pageName">Stats</string>
+    <string name="about_pageName">About</string>
+</resources>
