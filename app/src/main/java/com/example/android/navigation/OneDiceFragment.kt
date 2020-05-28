@@ -8,6 +8,8 @@ import androidx.fragment.app.Fragment
 import android.widget.TextView
 import androidx.core.app.ShareCompat
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import com.example.android.navigation.databinding.OneDiceFragmentBinding
@@ -20,9 +22,8 @@ class OneDiceFragment : Fragment() {
 
     var num:Int=0
     var countTotal1:Int=0
-    var countSix:Int=0
-    var countTotal2:Int=0
-    var countTwelve:Int=0
+    private  lateinit var viewModel : OneDiceViewModel
+
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -30,60 +31,51 @@ class OneDiceFragment : Fragment() {
 
         setHasOptionsMenu(true)
 
-        binding.constraintLayoutOne.setOnClickListener  {
-
-            countTotal1++
-            num = rollDice(binding)
-
-        }
-
-        binding.statsButton.setOnClickListener {
-            view!!.findNavController().navigate(OneDiceFragmentDirections.actionOneDiceFragmentToStatsFragment(countTotal1,countSix,countTwelve,countTotal2))
-        }
-
-    return binding.root
-        }
+        viewModel = ViewModelProviders.of(this).get(OneDiceViewModel::class.java)
 
 
-//to roll dice
 
-private fun rollDice(binding:OneDiceFragmentBinding):Int
-{
-    val randomNum1 = java.util.Random().nextInt(6) + 1
-    var drawableResource1 = when(randomNum1){
-        1-> R.drawable.dice_1
-        2-> R.drawable.dice_2
-        3-> R.drawable.dice_3
-        4-> R.drawable.dice_4
-        5-> R.drawable.dice_5
-        else-> R.drawable.dice_6
+        //binding.statsButton.setOnClickListener {
+         //   view!!.findNavController().navigate(OneDiceFragmentDirections.actionOneDiceFragmentToStatsFragment(countTotal1,countSix,countTwelve,countTotal2))
+        //}
+
+        viewModel._randomNum.observe(this, Observer { value ->
+            whatToDisplay(binding,value)
+        })
+
+        binding.oneDiceViewModel = viewModel
+
+             return binding.root
+      }
+
+
+
+  private fun whatToDisplay(binding: OneDiceFragmentBinding,value:Int){
+
+    var drawableResource1 = when(value) {
+         1-> R.drawable.dice_1
+         2-> R.drawable.dice_2
+         3-> R.drawable.dice_3
+         4-> R.drawable.dice_4
+         5-> R.drawable.dice_5
+          else-> R.drawable.dice_6
     }
 
-
-
-    var add = randomNum1
-
-    if(add==6)
-    {
-         countSix++
+    if(value==6)
+     {
         binding.totalTextOne.setTextColor(Color.RED)
-        binding.totalTextOne.text = add.toString()
-
-    }
+        binding.totalTextOne.text = value.toString()
+     }
 
     else
-    {
+     {
         binding.totalTextOne.setTextColor(Color.BLACK)
-        binding.totalTextOne.text = add.toString()
-    }
+        binding.totalTextOne.text = value.toString()
+     }
 
     binding.diceImageOne.setImageResource(drawableResource1)
 
-
-    return add
-
-
-}
+    }
 
 
 //to have share button

@@ -2,15 +2,16 @@ package com.example.android.navigation
 
 import android.content.Intent
 import android.os.Bundle
-import android.support.v4.media.session.MediaSessionCompat.Token.fromBundle
 import android.view.*
 import androidx.fragment.app.Fragment
 import android.widget.TextView
 import androidx.core.app.ShareCompat
 import androidx.core.content.ContextCompat.startActivity
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
 import com.example.android.navigation.StatsFragmentArgs.fromBundle
+import com.example.android.navigation.database.DoubleDiceDatabase
 import com.example.android.navigation.databinding.OneDiceFragmentBinding
 import com.example.android.navigation.databinding.StatsLayoutBinding
 
@@ -18,6 +19,8 @@ import com.example.android.navigation.databinding.StatsLayoutBinding
  * A simple [Fragment] subclass.
  */
 class StatsFragment : Fragment() {
+
+    private lateinit var viewModel: statsViewModel
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -28,6 +31,17 @@ class StatsFragment : Fragment() {
 
         val notRolled: String = "Not Rolled"
         val none: String = "0"
+
+        val application = requireNotNull(this.activity).application
+
+        val dataSource = DoubleDiceDatabase.getInstance(application).diceDao
+
+        val viewModelFactory = statsViewModelFactory(dataSource, application)
+
+        val sleepTrackerViewModel =
+                ViewModelProviders.of(
+                        this, viewModelFactory).get(statsViewModel::class.java)
+
 
         binding.statsConstraint.setOnClickListener {
 

@@ -3,11 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="oneDiceViewModel"
+            type="com.example.android.navigation.OneDiceViewModel" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraint_layout_one"
         style="@style/layout_style"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:onClick="@{()->oneDiceViewModel.rollValue()">
+
+
 
         <Button
             android:id="@+id/stats_button"
