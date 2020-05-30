@@ -5,7 +5,7 @@
 
     <data>
         <variable
-            name="oneDiceViewModel"
+            name="oneDiceVM"
             type="com.example.android.navigation.OneDiceViewModel" />
     </data>
 
@@ -13,9 +13,7 @@
         android:id="@+id/constraint_layout_one"
         style="@style/layout_style"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:onClick="@{()->oneDiceViewModel.rollValue()">
-
+        android:layout_height="match_parent" >
 
 
         <Button
@@ -35,7 +33,7 @@
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/total_text_one"
-            app:layout_constraintVertical_bias="0.77" />
+            app:layout_constraintVertical_bias="0.85" />
 
         <ImageView
             android:id="@+id/dice_image_one"
@@ -67,5 +65,18 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/dice_image_one"
             app:layout_constraintVertical_bias="0.22000003" />
+
+        <Button
+            android:id="@+id/button_roll"
+            style="@style/button_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rollbutton_text"
+            android:onClick="@{ () -> oneDiceVM.rollValue() }"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/total_text_one"
+            app:layout_constraintVertical_bias="0.23000002" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

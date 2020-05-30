@@ -2,6 +2,7 @@ package com.example.android.navigation
 
 import android.app.Application
 import android.graphics.Color
+import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -25,13 +26,16 @@ class OneDiceViewModel (
 
 
 
-    init {
-        setInitialValue()
-    }
+  //  init {
+      //  setInitialValue()
+  //  }
 
      private fun setInitialValue() {
        uiScope.launch {
          val newRoll = DoubleDice()
+           newRoll.noSix = 0
+           newRoll.noTwelve = 0
+           newRoll.NoRoll1 =0
          insert(newRoll)
        }
 
@@ -50,15 +54,21 @@ class OneDiceViewModel (
     }
 
     fun rollValue() {
+        Log.i("ritvik","rollValuefunc")
         uiScope.launch {
             val newRoll = DoubleDice()
-            update(newRoll)
 
             if(getValue() == 6) {
-                update(newRoll)
-                newRoll.noSix = newRoll.noSix?.plus(1)
-            }
 
+                newRoll.noSix = newRoll.noSix?.plus(1)
+                newRoll.NoRoll1 = newRoll.NoRoll1.plus(1)
+
+                insert(newRoll)
+            }
+            else {
+                newRoll.NoRoll1 = newRoll.NoRoll1.plus(1)
+                insert(newRoll)
+            }
         }
     }
 
@@ -67,6 +77,11 @@ class OneDiceViewModel (
         withContext(Dispatchers.IO) {
             database.update(rollx)
         }
+    }
+
+    override fun onCleared() {
+        super.onCleared()
+        viewModelJob.cancel()
     }
 
 }

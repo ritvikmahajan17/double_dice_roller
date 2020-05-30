@@ -3,6 +3,7 @@ package com.example.android.navigation
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import android.view.*
 import androidx.fragment.app.Fragment
 import android.widget.TextView
@@ -12,6 +13,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.Navigation
 import androidx.navigation.findNavController
+import com.example.android.navigation.database.DoubleDiceDatabase
 import com.example.android.navigation.databinding.OneDiceFragmentBinding
 
 
@@ -29,10 +31,18 @@ class OneDiceFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
         val binding: OneDiceFragmentBinding = DataBindingUtil.inflate<OneDiceFragmentBinding>(inflater, R.layout.one_dice_fragment, container, false)
 
-        setHasOptionsMenu(true)
+        val application = requireNotNull(this.activity).application
 
-        viewModel = ViewModelProviders.of(this).get(OneDiceViewModel::class.java)
+        val dataSource = DoubleDiceDatabase.getInstance(application).diceDao
 
+        val viewModelFactory = OneDiceViewModelFactory(dataSource, application)
+
+        Log.i("ritvik","oncreatefunc")
+        viewModel = ViewModelProviders.of(this,viewModelFactory).get(OneDiceViewModel::class.java)
+
+        binding.oneDiceVM= viewModel
+
+        binding.lifecycleOwner = this
 
 
         //binding.statsButton.setOnClickListener {
@@ -43,14 +53,16 @@ class OneDiceFragment : Fragment() {
             whatToDisplay(binding,value)
         })
 
-        binding.oneDiceViewModel = viewModel
 
+
+        setHasOptionsMenu(true)
              return binding.root
       }
 
 
 
   private fun whatToDisplay(binding: OneDiceFragmentBinding,value:Int){
+   Log.i("ritvik","dispfunc")
 
     var drawableResource1 = when(value) {
          1-> R.drawable.dice_1
