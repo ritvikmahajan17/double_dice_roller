@@ -10,17 +10,17 @@ data class  DoubleDice (
         @PrimaryKey(autoGenerate = true)
         var rollID:Long= 0L,
 
-        @ColumnInfo(name = "mode1_roll")
-        var NoRoll1:Int = 0,
+      //  @ColumnInfo(name = "mode1_roll")
+       // var NoRoll1:Int,
 
-        @ColumnInfo(name = "mode2_roll")
-        var NoRoll2: Int = 0,
+      //  @ColumnInfo(name = "mode2_roll")
+      //  var NoRoll2: Int = 0,
 
         @ColumnInfo(name = "six_roll")
-        var noSix:Int? = 0,
+        var noSix:Int = 0,
 
-        @ColumnInfo(name = "twelve_roll")
-        var noTwelve:Int? = 0
+        @ColumnInfo(name = "twelve_roll123")
+        var noTwelve:Int = 0
 
 
 )

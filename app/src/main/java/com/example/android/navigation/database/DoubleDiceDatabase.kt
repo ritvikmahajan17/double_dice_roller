@@ -5,7 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = [DoubleDice::class], version = 1, exportSchema = false)
+@Database(entities = [DoubleDice::class], version = 4, exportSchema = false)
 abstract class DoubleDiceDatabase : RoomDatabase() {
 
     abstract val diceDao: DiceDao
@@ -23,7 +23,7 @@ abstract class DoubleDiceDatabase : RoomDatabase() {
                     instance = Room.databaseBuilder(
                             context.applicationContext,
                             DoubleDiceDatabase::class.java,
-                            "sleep_history_database"
+                            "roll_history_database"
                     )
                             .fallbackToDestructiveMigration()
                             .build()

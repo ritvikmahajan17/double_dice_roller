@@ -19,34 +19,13 @@ class OneDiceViewModel (
 
     private val uiScope = CoroutineScope(Dispatchers.Main +  viewModelJob)
 
+
+
    private val randomNum = MutableLiveData<Int>() //used in vm
 
     val _randomNum : LiveData<Int>                  //used in ui
      get() = randomNum
 
-
-
-  //  init {
-      //  setInitialValue()
-  //  }
-
-     private fun setInitialValue() {
-       uiScope.launch {
-         val newRoll = DoubleDice()
-           newRoll.noSix = 0
-           newRoll.noTwelve = 0
-           newRoll.NoRoll1 =0
-         insert(newRoll)
-       }
-
-     }
-
-    private suspend fun insert(rollx : DoubleDice)
-    { withContext(Dispatchers.IO){
-        database.insert(rollx)
-    }
-
-    }
 
     private fun getValue():Int? {
         randomNum.value= java.util.Random().nextInt(6) + 1
@@ -54,28 +33,47 @@ class OneDiceViewModel (
     }
 
     fun rollValue() {
-        Log.i("ritvik","rollValuefunc")
+
         uiScope.launch {
             val newRoll = DoubleDice()
 
             if(getValue() == 6) {
+                updateSix()
+               }
 
-                newRoll.noSix = newRoll.noSix?.plus(1)
-                newRoll.NoRoll1 = newRoll.NoRoll1.plus(1)
-
-                insert(newRoll)
-            }
             else {
-                newRoll.NoRoll1 = newRoll.NoRoll1.plus(1)
                 insert(newRoll)
             }
         }
     }
 
-    private suspend fun update(rollx : DoubleDice)
+    private suspend fun insert(roll : DoubleDice) {
+        withContext(Dispatchers.IO) {
+            Log.i("ritvik", "inserte called")
+            database.insert(roll)
+        }
+    }
+
+    private suspend fun updateSix() {
+        withContext(Dispatchers.IO) {
+            Log.i("ritvik", "inserte called")
+            database.updateSix()
+        }
+    }
+
+       private suspend fun getSix() : Int
+        {return withContext(Dispatchers.IO){
+            Log.i("ritvik","getSi called")
+            var prevSix = database.getSix()
+
+            prevSix
+        }
+    }
+
+    private suspend fun update(roll : DoubleDice)
     {
         withContext(Dispatchers.IO) {
-            database.update(rollx)
+            database.update(roll)
         }
     }
 

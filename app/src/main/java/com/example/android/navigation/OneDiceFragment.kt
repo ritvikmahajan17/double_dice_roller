@@ -44,16 +44,9 @@ class OneDiceFragment : Fragment() {
 
         binding.lifecycleOwner = this
 
-
-        //binding.statsButton.setOnClickListener {
-         //   view!!.findNavController().navigate(OneDiceFragmentDirections.actionOneDiceFragmentToStatsFragment(countTotal1,countSix,countTwelve,countTotal2))
-        //}
-
         viewModel._randomNum.observe(this, Observer { value ->
             whatToDisplay(binding,value)
         })
-
-
 
         setHasOptionsMenu(true)
              return binding.root
