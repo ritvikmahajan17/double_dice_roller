@@ -21,7 +21,7 @@ interface DiceDao {
     @Query("UPDATE roll_table SET six_roll = six_roll + 1 ")
     fun updateSix()
 
-    @Query("SELECT six_roll from roll_table  ORDER BY six_roll LIMIT 1 ")
+    @Query("SELECT six_roll from roll_table  ORDER BY six_roll DESC LIMIT 1 ")
     fun getSix():Int
 
     @Query("SELECT twelve_roll123 from roll_table ORDER BY twelve_roll123 LIMIT 1")

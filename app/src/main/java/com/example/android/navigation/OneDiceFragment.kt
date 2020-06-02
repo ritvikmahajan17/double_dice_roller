@@ -22,8 +22,6 @@ import com.example.android.navigation.databinding.OneDiceFragmentBinding
  */
 class OneDiceFragment : Fragment() {
 
-    var num:Int=0
-    var countTotal1:Int=0
     private  lateinit var viewModel : OneDiceViewModel
 
 
@@ -37,7 +35,6 @@ class OneDiceFragment : Fragment() {
 
         val viewModelFactory = OneDiceViewModelFactory(dataSource, application)
 
-        Log.i("ritvik","oncreatefunc")
         viewModel = ViewModelProviders.of(this,viewModelFactory).get(OneDiceViewModel::class.java)
 
         binding.oneDiceVM= viewModel
@@ -46,6 +43,7 @@ class OneDiceFragment : Fragment() {
 
         viewModel._randomNum.observe(this, Observer { value ->
             whatToDisplay(binding,value)
+
         })
 
         setHasOptionsMenu(true)
@@ -55,9 +53,8 @@ class OneDiceFragment : Fragment() {
 
 
   private fun whatToDisplay(binding: OneDiceFragmentBinding,value:Int){
-   Log.i("ritvik","dispfunc")
 
-    var drawableResource1 = when(value) {
+    val drawableResource1 = when(value) {
          1-> R.drawable.dice_1
          2-> R.drawable.dice_2
          3-> R.drawable.dice_3
@@ -75,7 +72,7 @@ class OneDiceFragment : Fragment() {
     else
      {
         binding.totalTextOne.setTextColor(Color.BLACK)
-        binding.totalTextOne.text = value.toString()
+        binding.totalTextOne.text =value.toString()
      }
 
     binding.diceImageOne.setImageResource(drawableResource1)
@@ -102,7 +99,7 @@ override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
 private fun getShareIntent(): Intent {
 
     val shareIntent = Intent(Intent.ACTION_SEND)
-    if(num==6) {
+    if(viewModel.getValue()==6) {
         return ShareCompat.IntentBuilder.from(activity)
                 .setText(getString(R.string.share_success_text_one))
                 .setType("text/plain")
@@ -110,9 +107,9 @@ private fun getShareIntent(): Intent {
     }
     else
         return ShareCompat.IntentBuilder.from(activity)
-                .setText(getString(R.string.share_text_one))
-                .setType("text/plain")
-                .intent
+               .setText(getString(R.string.share_text))
+               .setType("text/plain")
+               .intent
 }
 
 // Starting an Activity with our new Intent

@@ -19,15 +19,13 @@ class OneDiceViewModel (
 
     private val uiScope = CoroutineScope(Dispatchers.Main +  viewModelJob)
 
-
-
-   private val randomNum = MutableLiveData<Int>() //used in vm
+    private val randomNum = MutableLiveData<Int>() //used in vm
 
     val _randomNum : LiveData<Int>                  //used in ui
      get() = randomNum
 
 
-    private fun getValue():Int? {
+     fun getValue():Int? {
         randomNum.value= java.util.Random().nextInt(6) + 1
                 return randomNum.value
     }
@@ -49,31 +47,15 @@ class OneDiceViewModel (
 
     private suspend fun insert(roll : DoubleDice) {
         withContext(Dispatchers.IO) {
-            Log.i("ritvik", "inserte called")
+
             database.insert(roll)
         }
     }
 
     private suspend fun updateSix() {
         withContext(Dispatchers.IO) {
-            Log.i("ritvik", "inserte called")
+
             database.updateSix()
-        }
-    }
-
-       private suspend fun getSix() : Int
-        {return withContext(Dispatchers.IO){
-            Log.i("ritvik","getSi called")
-            var prevSix = database.getSix()
-
-            prevSix
-        }
-    }
-
-    private suspend fun update(roll : DoubleDice)
-    {
-        withContext(Dispatchers.IO) {
-            database.update(roll)
         }
     }
 

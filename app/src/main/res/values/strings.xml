@@ -31,6 +31,7 @@
     <string name="title_trivia_rules">Trivia Rules</string>
     <string name="share_success_text_two">I just got a perfect 12 in TWO DICE mode on DOUBLE DICE ROLLER #DoubleDiceRoller #RitvikMahajan</string>
     <string name="share_success_text_one">I just got a perfect 6 in ONE DICE mode onDOUBLE DICE ROLLER #DoubleDiceRoller #RitvikMahajan</string>
+    <string name="share_text">I\'m playing DoubleDice Roller in One Dice Mode #DoubleDiceRoller #RitvikMahajan</string>
     <string name="share_text_one">I got %1$d 6\'s out of %2$d in One Dice Mode #DoubleDiceRoller #RitvikMahajan</string>
     <string name="share_text_two">I got %1$d 12\'s out of %2$d in Two Dice mode #DoubleDiceRoller #RitvikMahajan</string>
     <string name="submit_button">Submit</string>
@@ -45,7 +46,7 @@
     <string name="rollbutton_text">ROLL</string>
     <string name="total_add_text">TOTAL</string>
     <string name="home_dice_image">Home Dice</string>
-    <string name="Choose_num_of_dices">How many Dices do you wanna roll?</string>
+    <string name="Choose_num_of_dices">How many Dices do you want to roll?</string>
     <string name="button_one_text">1 Dice</string>
     <string name="button_two_text">2 Dices</string>
     <string name="button_three_text">3 Dices</string>
