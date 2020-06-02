@@ -27,6 +27,7 @@
             android:layout_marginBottom="16dp"
             android:shadowColor="#BD2A2A"
             android:text="@string/stats_button"
+            android:onClick="@{() -> oneDiceVM.ontoStats()}"
             android:textColor="@color/colorPrimaryDark"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

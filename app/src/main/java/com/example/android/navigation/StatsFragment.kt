@@ -8,9 +8,9 @@ import android.widget.TextView
 import androidx.core.app.ShareCompat
 import androidx.core.content.ContextCompat.startActivity
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
-import com.example.android.navigation.StatsFragmentArgs.fromBundle
 import com.example.android.navigation.database.DoubleDiceDatabase
 import com.example.android.navigation.databinding.OneDiceFragmentBinding
 import com.example.android.navigation.databinding.StatsLayoutBinding
@@ -20,14 +20,14 @@ import com.example.android.navigation.databinding.StatsLayoutBinding
  */
 class StatsFragment : Fragment() {
 
-    private lateinit var viewModel: statsViewModel
+    private lateinit var sViewModel: statsViewModel
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
 
         val binding: StatsLayoutBinding = DataBindingUtil.inflate<StatsLayoutBinding>(inflater, R.layout.stats_layout, container, false)
 
-        val args = StatsFragmentArgs.fromBundle(arguments!!)
+       // val args = StatsFragmentArgs.fromBundle(arguments!!)
 
         val notRolled: String = "Not Rolled"
         val none: String = "0"
@@ -38,11 +38,21 @@ class StatsFragment : Fragment() {
 
         val viewModelFactory = statsViewModelFactory(dataSource, application)
 
-        val sleepTrackerViewModel =
-                ViewModelProviders.of(
-                        this, viewModelFactory).get(statsViewModel::class.java)
+        sViewModel = ViewModelProviders.of(this, viewModelFactory).get(statsViewModel::class.java)
 
+        sViewModel.Totalrolls.observe(this, Observer { value ->
 
+            binding.oneTotal.text = value.toString()
+
+        })
+
+        sViewModel.Totalsix.observe(this, Observer { value ->
+
+            binding.oneSix.text = value.toString()
+
+        })
+
+/*
         binding.statsConstraint.setOnClickListener {
 
 
@@ -73,11 +83,13 @@ class StatsFragment : Fragment() {
 
         }
 
+ */
+
         setHasOptionsMenu(true)
 
         return binding.root
     }
-
+/*
     override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
 
 
@@ -132,6 +144,8 @@ class StatsFragment : Fragment() {
         return super.onOptionsItemSelected(item)
 
     }
+
+ */
 
     }
 

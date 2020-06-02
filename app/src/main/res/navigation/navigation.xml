@@ -52,18 +52,5 @@
         android:id="@+id/statsFragment"
         android:name="com.example.android.navigation.StatsFragment"
         android:label="@string/Stats_pageName"
-        tools:layout="@layout/stats_layout">
-        <argument
-            android:name="countTotal1"
-            app:argType="integer" />
-        <argument
-            android:name="countSix"
-            app:argType="integer" />
-        <argument
-            android:name="countTotal2"
-            app:argType="integer" />
-        <argument
-            android:name="countTwelve"
-            app:argType="integer" />
-    </fragment>
+        tools:layout="@layout/stats_layout"/>
 </navigation>

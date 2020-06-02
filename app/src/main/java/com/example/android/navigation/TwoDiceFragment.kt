@@ -43,7 +43,7 @@ class TwoDiceFragment : Fragment() {
             }
 
         binding.statsButton2.setOnClickListener {
-            view!!.findNavController().navigate(TwoDiceFragmentDirections.actionTwoDiceFragmentToStatsFragment(countSix,countTotal1,countTotal2,countTwelve))
+            view!!.findNavController().navigate(TwoDiceFragmentDirections.actionTwoDiceFragmentToStatsFragment())
         }
 
         return binding.root

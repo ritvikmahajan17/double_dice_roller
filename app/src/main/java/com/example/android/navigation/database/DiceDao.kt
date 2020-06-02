@@ -27,6 +27,9 @@ interface DiceDao {
     @Query("SELECT twelve_roll123 from roll_table ORDER BY twelve_roll123 LIMIT 1")
     fun getTwelve():Int
 
+    @Query("SELECT rollID from roll_table ORDER BY rollID DESC LIMIT 1")
+    fun getRollID():Int
+
     @Query("DELETE FROM roll_table")
     fun clear()
 

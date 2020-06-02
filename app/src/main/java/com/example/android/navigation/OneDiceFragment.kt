@@ -13,6 +13,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.Navigation
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.example.android.navigation.database.DoubleDiceDatabase
 import com.example.android.navigation.databinding.OneDiceFragmentBinding
 
@@ -46,13 +47,24 @@ class OneDiceFragment : Fragment() {
 
         })
 
+        viewModel.gotoStats.observe(this, Observer { value ->
+            if(value)
+                findNavController().navigate(OneDiceFragmentDirections.actionOneDiceFragmentToStatsFragment())
+
+        })
+
+
+
         setHasOptionsMenu(true)
              return binding.root
       }
 
 
 
+
+
   private fun whatToDisplay(binding: OneDiceFragmentBinding,value:Int){
+
 
     val drawableResource1 = when(value) {
          1-> R.drawable.dice_1

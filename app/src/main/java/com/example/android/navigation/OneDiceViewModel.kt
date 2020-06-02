@@ -24,6 +24,15 @@ class OneDiceViewModel (
     val _randomNum : LiveData<Int>                  //used in ui
      get() = randomNum
 
+    private val _gotoStats = MutableLiveData<Boolean>()
+     val gotoStats : LiveData<Boolean>
+      get() = _gotoStats
+
+    fun ontoStats()
+    {
+        _gotoStats.value = true
+    }
+
 
      fun getValue():Int? {
         randomNum.value= java.util.Random().nextInt(6) + 1
