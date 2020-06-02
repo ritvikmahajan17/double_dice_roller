@@ -45,5 +45,4 @@ interface DiceDao {
     @Query("DELETE FROM roll_table")
     fun clear()
 
-
 }
