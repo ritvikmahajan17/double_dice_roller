@@ -1,17 +1,14 @@
 package com.example.android.navigation
 
 import android.app.Application
-import android.graphics.Color
-import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.android.navigation.database.DiceDao
 import com.example.android.navigation.database.DoubleDice
-import com.example.android.navigation.databinding.OneDiceFragmentBinding
 import kotlinx.coroutines.*
 
-class OneDiceViewModel (
+class TwoDiceViewModel (
         val database: DiceDao,
         application: Application) : AndroidViewModel(application)
 {
@@ -20,38 +17,52 @@ class OneDiceViewModel (
     private val uiScope = CoroutineScope(Dispatchers.Main +  viewModelJob)
 
     private val randomNum = MutableLiveData<Int>() //used in vm
-
-    val _randomNum : LiveData<Int>                  //used in ui
-     get() = randomNum
+        val _randomNum : LiveData<Int>                  //used in ui
+             get() = randomNum
 
     private val _gotoStats = MutableLiveData<Boolean>()
-     val gotoStats : LiveData<Boolean>
-      get() = _gotoStats
+    val gotoStats : LiveData<Boolean>
+        get() = _gotoStats
 
     fun ontoStats()
     {
         _gotoStats.value = true
     }
 
+    fun getNum1():Int{
+        val num1 =java.util.Random().nextInt(6) + 1
+        return num1
+    }
 
-     fun getValue():Int? {
-        randomNum.value= java.util.Random().nextInt(6) + 1
-                return randomNum.value
+    fun getNum2():Int{
+        val num2 =java.util.Random().nextInt(6) + 1
+        return num2
+    }
+
+    fun getValue():Int? {
+        randomNum.value = getNum1() + getNum2()
+        return randomNum.value
     }
 
     fun rollValue() {
 
         uiScope.launch {
             val newRoll = DoubleDice()
-            insert(newRoll)
+                insert(newRoll)
 
-            if(getValue() == 6) {
-                updateSix()
-               }
+            if (getValue()==12)
+              updateTwelve()
 
             else {
-                updateRollmode1()
+                updateRollmode2()
             }
+        }
+    }
+
+    private suspend fun updateRollmode2() {
+        withContext(Dispatchers.IO) {
+
+            database.updateRollMode2()
         }
     }
 
@@ -62,17 +73,10 @@ class OneDiceViewModel (
         }
     }
 
-    private suspend fun updateRollmode1() {
+    private suspend fun updateTwelve() {
         withContext(Dispatchers.IO) {
 
-            database.updateRollMode1()
-        }
-    }
-
-    private suspend fun updateSix() {
-        withContext(Dispatchers.IO) {
-
-            database.updateSix()
+            database.updateTwelve()
         }
     }
 

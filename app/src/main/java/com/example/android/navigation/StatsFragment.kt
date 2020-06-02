@@ -27,11 +27,6 @@ class StatsFragment : Fragment() {
 
         val binding: StatsLayoutBinding = DataBindingUtil.inflate<StatsLayoutBinding>(inflater, R.layout.stats_layout, container, false)
 
-       // val args = StatsFragmentArgs.fromBundle(arguments!!)
-
-        val notRolled: String = "Not Rolled"
-        val none: String = "0"
-
         val application = requireNotNull(this.activity).application
 
         val dataSource = DoubleDiceDatabase.getInstance(application).diceDao
@@ -40,9 +35,15 @@ class StatsFragment : Fragment() {
 
         sViewModel = ViewModelProviders.of(this, viewModelFactory).get(statsViewModel::class.java)
 
-        sViewModel.Totalrolls.observe(this, Observer { value ->
+        sViewModel.Totalrolls_mode1.observe(this, Observer { value ->
 
             binding.oneTotal.text = value.toString()
+
+        })
+
+        sViewModel.Totalrolls_mode2.observe(this, Observer { value ->
+
+            binding.twoTotal.text = value.toString()
 
         })
 
@@ -52,38 +53,12 @@ class StatsFragment : Fragment() {
 
         })
 
-/*
-        binding.statsConstraint.setOnClickListener {
+        sViewModel.Totaltwelve.observe(this, Observer { value ->
 
+            binding.twoTwelve.text = value.toString()
 
-            if (args.countTotal1==0 && args.countSix == 0) //
-                binding.oneSix.text = notRolled
-            else if (args.countSix==0)
-                binding.oneSix.text= none
-            else
-                binding.oneSix.text = args.countSix.toString()
+        })
 
-            if (args.countTotal1 == 0)
-                binding.oneTotal.text = notRolled
-            else
-                binding.oneTotal.text = args.countTotal1.toString()
-
-
-            if (args.countTotal2==0 && args.countTwelve == 0)
-                binding.twoTwelve.text = notRolled
-            else if (args.countTwelve==0)
-            binding.twoTwelve.text=none
-            else
-                binding.twoTwelve.text = args.countTwelve.toString()
-
-            if (args.countTotal2 == 0)
-                binding.twoTotal.text = notRolled
-            else
-                binding.twoTotal.text = args.countTotal2.toString()
-
-        }
-
- */
 
         setHasOptionsMenu(true)
 

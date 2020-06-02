@@ -18,9 +18,6 @@ import com.example.android.navigation.database.DoubleDiceDatabase
 import com.example.android.navigation.databinding.OneDiceFragmentBinding
 
 
-/**
- * A simple [Fragment] subclass.
- */
 class OneDiceFragment : Fragment() {
 
     private  lateinit var viewModel : OneDiceViewModel
@@ -91,7 +88,7 @@ class OneDiceFragment : Fragment() {
 
     }
 
-
+/*
 //to have share button
 override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
 
@@ -139,6 +136,8 @@ override fun onOptionsItemSelected(item: MenuItem?): Boolean {
     return super.onOptionsItemSelected(item)
 
 }
+
+ */
 
     
 

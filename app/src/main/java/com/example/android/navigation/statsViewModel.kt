@@ -17,43 +17,82 @@ class statsViewModel(
 
     private val uiScope = CoroutineScope(Dispatchers.Main +  viewModelJob)
 
-    private val _Totalrolls = MutableLiveData<Int>()
-     val Totalrolls :LiveData<Int>
-       get() = _Totalrolls
+    private val _Totalrolls_mode1 = MutableLiveData<Int>()
+     val Totalrolls_mode1 :LiveData<Int>
+       get() = _Totalrolls_mode1
+
+    private val _Totalrolls_mode2 = MutableLiveData<Int>()
+    val Totalrolls_mode2 :LiveData<Int>
+        get() = _Totalrolls_mode2
 
   private  val _Totalsix = MutableLiveData<Int>()
     val Totalsix :LiveData<Int>
         get() = _Totalsix
 
+    private  val _Totaltwelve = MutableLiveData<Int>()
+    val Totaltwelve :LiveData<Int>
+        get() = _Totaltwelve
 
 
     init {
-        getRolls()
+        getRolls_mode1()
+        getRolls_mode2()
         getSix()
+        getTwelve()
+
     }
 
-   private fun getRolls()
+   private fun getRolls_mode2()
     {
         uiScope.launch {
 
-            _Totalrolls.value = getTotalRolls()
+            _Totalrolls_mode2.value = getTotalRolls_mode2()
         }
     }
 
-   private fun getSix(){
+    private fun getRolls_mode1()
+    {
+        uiScope.launch {
+
+            _Totalrolls_mode1.value = getTotalRolls_mode1()
+        }
+    }
+
+
+    private fun getSix(){
 
         uiScope.launch {
-            getTotalSix()
+
             _Totalsix.value = getTotalSix()
 
         }
     }
 
-    private suspend fun getTotalRolls() :Int
+    private fun getTwelve(){
+
+        uiScope.launch {
+
+            _Totaltwelve.value = getTotalTwelve()
+
+        }
+    }
+
+    private suspend fun getTotalRolls_mode1() :Int
     {
         return withContext(Dispatchers.IO){
 
-         val rolls :Int = database.getRollID()
+         val rolls :Int = database.getTotal6()
+
+            rolls
+
+        }
+    }
+
+    private suspend fun getTotalRolls_mode2() :Int
+    {
+        return withContext(Dispatchers.IO){
+
+            val rolls :Int = database.getTotal12()
 
             rolls
 
@@ -67,6 +106,17 @@ class statsViewModel(
             val six :Int = database.getSix()
 
             six
+
+        }
+    }
+
+    private suspend fun getTotalTwelve() :Int
+    {
+        return withContext(Dispatchers.IO){
+
+            val twelve :Int = database.getTwelve()
+
+            twelve
 
         }
     }

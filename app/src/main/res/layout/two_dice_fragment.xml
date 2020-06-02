@@ -3,6 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="twoDiceVM"
+            type="com.example.android.navigation.TwoDiceViewModel" />
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraint_layout_two"
@@ -11,6 +16,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="center_vertical"
         android:orientation="vertical"
+        android:onClick="@{()-> twoDiceVM.rollValue()}"
         tools:context=".MainActivity">
 
 
@@ -26,6 +32,7 @@
             android:shadowColor="#BD2A2A"
             android:text="@string/stats_button"
             android:textColor="@color/colorPrimaryDark"
+            android:onClick="@{() -> twoDiceVM.ontoStats()}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
