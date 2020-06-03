@@ -4,7 +4,8 @@
 
 Made by using MVVM architecture and connected with SQLite for database Requirements with Share option included.
 
-![Screenshot_20200604-035620](https://user-images.githubusercontent.com/56093481/83695888-b091ea00-a618-11ea-9bf5-1e9e36d4cb8d.png)
+<img src =![Screenshot_20200604-035620](https://user-images.githubusercontent.com/56093481/83695888-b091ea00-a618-11ea-9bf5-1e9e36d4cb8d.png) 
+ width = 40 >
 
 ![Screenshot_20200604-035454](https://user-images.githubusercontent.com/56093481/83695907-b8ea2500-a618-11ea-83e0-6556202f7d72.png)
 
