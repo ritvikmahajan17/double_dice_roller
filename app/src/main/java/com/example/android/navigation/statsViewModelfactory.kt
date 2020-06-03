@@ -10,8 +10,8 @@ class statsViewModelFactory(
         private val application: Application) : ViewModelProvider.Factory {
     @Suppress("unchecked_cast")
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom(statsViewModel::class.java)) {
-            return statsViewModel(dataSource, application) as T
+        if (modelClass.isAssignableFrom(StatsViewModel::class.java)) {
+            return StatsViewModel(dataSource, application) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }

@@ -5,33 +5,18 @@ import android.graphics.Color
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
-import androidx.core.app.ShareCompat
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
-import com.example.android.navigation.TwoDiceFragmentDirections.actionTwoDiceFragmentToStatsFragment
 import com.example.android.navigation.database.DoubleDiceDatabase
-import com.example.android.navigation.databinding.OneDiceFragmentBinding
 import com.example.android.navigation.databinding.TwoDiceFragmentBinding
 
-
-/**
- * A simple [Fragment] subclass.
- */
 
 
 @Suppress("UNREACHABLE_CODE", "DEPRECATED_IDENTITY_EQUALS")
 class TwoDiceFragment : Fragment() {
-/*
-     var num:Int=0
-    var countTotal2:Int=0
-    var countTwelve:Int=0
-    var countTotal1:Int=0
-    var countSix:Int=0
 
- */
            private  lateinit var viewModel : TwoDiceViewModel
 
     //Inflating and Returning the View with DataBindingUtil
@@ -107,60 +92,6 @@ class TwoDiceFragment : Fragment() {
         binding.dice2Image.setImageResource(drawableResource2)
 
     }
-
-/*
-    //to have share button
-    override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
-
-
-            super.onCreateOptionsMenu(menu, inflater)
-            inflater?.inflate(R.menu.winner_menu, menu)
-
-
-            if ( null == getShareIntent().resolveActivity(activity!!.packageManager) )
-            {
-                 menu?.findItem(R.id.share)?.isVisible = false
-            }
-
-    }
-
-
-    private fun getShareIntent(): Intent {
-
-        val shareIntent = Intent(Intent.ACTION_SEND)
-         if(num==12) {
-             return ShareCompat.IntentBuilder.from(activity)
-                     .setText(getString(R.string.share_success_text_two))
-                     .setType("text/plain")
-                     .intent
-         }
-        else
-             return ShareCompat.IntentBuilder.from(activity)
-                     .setText(getString(R.string.share_text_two))
-                     .setType("text/plain")
-                     .intent
-    }
-
-    // Starting an Activity with our new Intent
-    private fun shareSuccess() {
-        startActivity(getShareIntent())
-
-    }
-
-
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        when (item!!.itemId) {
-            R.id.share -> shareSuccess()
-        }
-
-        return super.onOptionsItemSelected(item)
-
-    }
-
- */
-
-
-
 }
 
 

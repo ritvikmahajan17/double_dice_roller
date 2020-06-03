@@ -88,59 +88,6 @@ class OneDiceFragment : Fragment() {
 
     }
 
-/*
-//to have share button
-override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
-
-
-    super.onCreateOptionsMenu(menu, inflater)
-    inflater?.inflate(R.menu.winner_menu, menu)
-
-
-    if ( null == getShareIntent().resolveActivity(activity!!.packageManager) )
-    {
-        menu?.findItem(R.id.share)?.isVisible = false
-    }
-
-}
-
-
-private fun getShareIntent(): Intent {
-
-    val shareIntent = Intent(Intent.ACTION_SEND)
-    if(viewModel.getValue()==6) {
-        return ShareCompat.IntentBuilder.from(activity)
-                .setText(getString(R.string.share_success_text_one))
-                .setType("text/plain")
-                .intent
-    }
-    else
-        return ShareCompat.IntentBuilder.from(activity)
-               .setText(getString(R.string.share_text))
-               .setType("text/plain")
-               .intent
-}
-
-// Starting an Activity with our new Intent
-private fun shareSuccess() {
-    startActivity(getShareIntent())
-
-}
-
-
-override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-    when (item!!.itemId) {
-        R.id.share -> shareSuccess()
-    }
-
-    return super.onOptionsItemSelected(item)
-
-}
-
- */
-
-    
-
 }
 
 

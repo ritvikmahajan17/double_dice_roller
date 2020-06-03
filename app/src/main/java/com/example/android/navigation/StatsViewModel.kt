@@ -9,13 +9,18 @@ import com.example.android.navigation.database.DiceDao
 import com.example.android.navigation.database.DoubleDice
 import kotlinx.coroutines.*
 
-class statsViewModel(
+class StatsViewModel(
         val database: DiceDao,
         application: Application) : AndroidViewModel(application) {
 
     private var viewModelJob = Job()
 
     private val uiScope = CoroutineScope(Dispatchers.Main +  viewModelJob)
+
+    var mode2_roll:Int? =null
+    var mode1_roll:Int? =null
+    var mode2_twelve:Int? =null
+    var mode1_six:Int? =null
 
     private val _Totalrolls_mode1 = MutableLiveData<Int>()
      val Totalrolls_mode1 :LiveData<Int>
@@ -33,6 +38,10 @@ class statsViewModel(
     val Totaltwelve :LiveData<Int>
         get() = _Totaltwelve
 
+    private  val _showInitial = MutableLiveData<Boolean>()
+    val showInitial :LiveData<Boolean>
+        get() = _showInitial
+
 
     init {
         getRolls_mode1()
@@ -42,19 +51,21 @@ class statsViewModel(
 
     }
 
-   private fun getRolls_mode2()
+    fun getRolls_mode2()
     {
         uiScope.launch {
 
             _Totalrolls_mode2.value = getTotalRolls_mode2()
+            mode2_roll = getTotalRolls_mode2()
         }
     }
 
-    private fun getRolls_mode1()
+     fun getRolls_mode1()
     {
         uiScope.launch {
 
             _Totalrolls_mode1.value = getTotalRolls_mode1()
+            mode1_roll = getTotalRolls_mode1()
         }
     }
 
@@ -64,6 +75,7 @@ class statsViewModel(
         uiScope.launch {
 
             _Totalsix.value = getTotalSix()
+            mode1_six = getTotalSix()
 
         }
     }
@@ -73,8 +85,16 @@ class statsViewModel(
         uiScope.launch {
 
             _Totaltwelve.value = getTotalTwelve()
+            mode2_twelve = getTotalTwelve()
 
         }
+    }
+
+     fun ClearStats()
+    {   uiScope.launch {
+            clear()
+        _showInitial.value=true
+    }
     }
 
     private suspend fun getTotalRolls_mode1() :Int
@@ -118,6 +138,13 @@ class statsViewModel(
 
             twelve
 
+        }
+    }
+
+    private suspend fun clear()
+    {
+         withContext(Dispatchers.IO){
+           database.clear()
         }
     }
 

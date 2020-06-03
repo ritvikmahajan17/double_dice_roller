@@ -32,7 +32,7 @@
     <string name="share_success_text_two">I just got a perfect 12 in TWO DICE mode on DOUBLE DICE ROLLER #DoubleDiceRoller #RitvikMahajan</string>
     <string name="share_success_text_one">I just got a perfect 6 in ONE DICE mode onDOUBLE DICE ROLLER #DoubleDiceRoller #RitvikMahajan</string>
     <string name="share_text">I\'m playing DoubleDice Roller in One Dice Mode #DoubleDiceRoller #RitvikMahajan</string>
-    <string name="share_text_one">I got %1$d 6\'s out of %2$d in One Dice Mode #DoubleDiceRoller #RitvikMahajan</string>
+    <string name="share_text_one">I got %1$d 6\'s out of %2$d and  %3$d 12\'s out of %4$d in #DoubleDiceRoller #RitvikMahajan</string>
     <string name="share_text_two">I got %1$d 12\'s out of %2$d in Two Dice mode #DoubleDiceRoller #RitvikMahajan</string>
     <string name="submit_button">Submit</string>
     <string name="congratulations">Congratulations!</string>
@@ -62,4 +62,5 @@
     <string name="two_twelve_text">value</string>
     <string name="Stats_pageName">Stats</string>
     <string name="about_pageName">About</string>
+    <string name="Clear_button_text">CLEAR STATS</string>
 </resources>
