@@ -1,11 +1,11 @@
 
 
-## Double Dice Roller 
+# Double Dice Roller 
 
 Made by using MVVM architecture and connected with SQLite for database Requirements with Share option included.
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/56093481/83695907-b8ea2500-a618-11ea-83e0-6556202f7d72.png" width="256" height="455">
+  <img src="https://user-images.githubusercontent.com/56093481/83721346-83fdc280-a658-11ea-86e2-ade6e480a890.png" width="256" height="455">
  
   <img src="https://user-images.githubusercontent.com/56093481/83695907-b8ea2500-a618-11ea-83e0-6556202f7d72.png" width="256" height="455">
   
