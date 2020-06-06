@@ -5,15 +5,19 @@
 Made by using MVVM architecture and connected with SQLite for database Requirements with Share option included.
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/56093481/83721346-83fdc280-a658-11ea-86e2-ade6e480a890.png" width="256" height="455">
+  <img src="https://user-images.githubusercontent.com/56093481/83951583-10bea100-a850-11ea-8896-a9a8aa37769e.png" width="250" height="455">
  
-  <img src="https://user-images.githubusercontent.com/56093481/83695907-b8ea2500-a618-11ea-83e0-6556202f7d72.png" width="256" height="455">
+  <img src="https://user-images.githubusercontent.com/56093481/83951586-14522800-a850-11ea-8a89-051b8ac0cdc9.png" width="250" height="455">
   
-  <img src="https://user-images.githubusercontent.com/56093481/83695912-bd164280-a618-11ea-8b07-c73ebef3f55b.png" width="256" height="455">
+  <img src="https://user-images.githubusercontent.com/56093481/83951589-1916dc00-a850-11ea-867e-98b75e32c917.png" width="250" height="455">
   
- <img src="https://user-images.githubusercontent.com/56093481/83695916-bee00600-a618-11ea-9a94-95c2795391fb.png" width="256" height="455">
+ <img src="https://user-images.githubusercontent.com/56093481/83951591-1a480900-a850-11ea-983a-ac8203a2bfce.png" width="250" height="455">
  
- <img src="https://user-images.githubusercontent.com/56093481/83695919-c1426000-a618-11ea-96a8-31ea56f82d15.png" width="256" height="455">
+ <img src="https://user-images.githubusercontent.com/56093481/83951592-1ae09f80-a850-11ea-82e2-f31f867e2544.png" width="250" height="455">
+ 
+ <img src="https://user-images.githubusercontent.com/56093481/83951596-1ddb9000-a850-11ea-9c1d-8f391c54abfa.png" width="250" height="455">
+ 
+ <img src="https://user-images.githubusercontent.com/56093481/83951600-20d68080-a850-11ea-9a09-310cf1755e4a.png" width="250" height="455">
 </p>
  
 
