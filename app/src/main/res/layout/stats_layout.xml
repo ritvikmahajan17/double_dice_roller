@@ -13,7 +13,7 @@
         android:id="@+id/stats_constraint"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#5B84B1">
+        android:background="#FAD0C9">
 
         <ImageView
             android:id="@+id/imageView2"
@@ -71,7 +71,7 @@
             android:layout_marginEnd="16dp"
             android:fontFamily="@font/lato"
             android:text="@string/One_Dice_stats"
-            android:textColor="#FC776A"
+            android:textColor="@android:color/background_dark"
             android:textSize="24sp"
             app:layout_constraintBaseline_toBaselineOf="@+id/one_total"
             app:layout_constraintEnd_toEndOf="parent"
@@ -87,7 +87,7 @@
             android:layout_marginEnd="16dp"
             android:fontFamily="@font/lato"
             android:text="@string/two_Dice_stats"
-            android:textColor="#FC776A"
+            android:textColor="@android:color/background_dark"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -167,7 +167,7 @@
             android:background="@drawable/stats_button"
             android:onClick="@{() -> statsVM.ClearStats()}"
             android:text="@string/Clear_button_text"
-            android:textColor="#FC776A"
+            android:textColor="@android:color/background_dark"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
