@@ -1,6 +1,7 @@
 package com.example.android.navigation
 
 import android.content.Intent
+import android.content.res.ColorStateList
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
@@ -21,6 +22,7 @@ import com.example.android.navigation.databinding.OneDiceFragmentBinding
 class OneDiceFragment : Fragment() {
 
     private  lateinit var viewModel : OneDiceViewModel
+    private val myColor:Int = Color.parseColor("#EEA47F")
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -80,7 +82,7 @@ class OneDiceFragment : Fragment() {
 
     else
      {
-        binding.totalTextOne.setTextColor(Color.BLACK)
+        binding.totalTextOne.setTextColor(myColor)
         binding.totalTextOne.text =value.toString()
      }
 

@@ -19,8 +19,8 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Theme customization. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimary">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
@@ -35,7 +35,11 @@
     </style>
 
     <style name="layout_style">
-        <item name="android:background">@color/youWinBackground</item>
+        <item name="android:background">@color/home_color</item>
+    </style>
+
+    <style name="layout_style_modes">
+        <item name="android:background">@color/modes_color</item>
     </style>
 
     <style name="stats_text_style">
@@ -56,6 +60,12 @@
         <item name="android:layout_marginTop">16dp</item>
         <item name="android:fontFamily">@font/lato</item>
         <item name="android:textAlignment">gravity</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="new_button_style" parent="button_style">
+        <item name="android:layout_width">250dp</item>
+        <item name="android:layout_height">60dp</item>
         <item name="android:textSize">20sp</item>
     </style>
 </resources>

@@ -13,7 +13,7 @@
         android:id="@+id/stats_constraint"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#B2DFDB">
+        android:background="#5B84B1">
 
         <ImageView
             android:id="@+id/imageView2"
@@ -26,7 +26,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.060000002"
-            app:srcCompat="@drawable/android" />
+            app:srcCompat="@drawable/bx_stats" />
 
         <TextView
             android:id="@+id/stats_text1"
@@ -41,7 +41,8 @@
             app:layout_constraintBottom_toTopOf="@+id/textView5"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+            app:layout_constraintTop_toBottomOf="@+id/imageView2"
+            app:layout_constraintVertical_bias="1.0" />
 
         <TextView
             android:id="@+id/stats_text2"
@@ -60,7 +61,7 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView2"
-            app:layout_constraintVertical_bias="0.55" />
+            app:layout_constraintVertical_bias="0.53999996" />
 
         <TextView
             android:id="@+id/textView5"
@@ -70,6 +71,8 @@
             android:layout_marginEnd="16dp"
             android:fontFamily="@font/lato"
             android:text="@string/One_Dice_stats"
+            android:textColor="#FC776A"
+            android:textSize="24sp"
             app:layout_constraintBaseline_toBaselineOf="@+id/one_total"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -84,22 +87,28 @@
             android:layout_marginEnd="16dp"
             android:fontFamily="@font/lato"
             android:text="@string/two_Dice_stats"
-            app:layout_constraintBaseline_toBaselineOf="@+id/two_total"
+            android:textColor="#FC776A"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.1"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.77" />
 
         <TextView
             android:id="@+id/one_total"
             style="@style/stats_num_style"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
             android:fontFamily="@font/lato"
             android:hint="@string/two_twelve_text"
-            android:textSize="14sp"
+            android:textAlignment="center"
+            android:textColor="#FC776A"
+            android:textSize="24sp"
             app:layout_constraintBottom_toTopOf="@+id/stats_text2"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.76"
+            app:layout_constraintHorizontal_bias="0.93"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.68" />
@@ -107,55 +116,62 @@
         <TextView
             android:id="@+id/one_six"
             style="@style/stats_num_style"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
             android:hint="@string/two_twelve_text"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="@+id/textView5"
+            android:textAlignment="center"
+            android:textColor="#FC776A"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/stats_text2"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.84"
+            app:layout_constraintHorizontal_bias="0.93"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/textView5"
-            app:layout_constraintVertical_bias="1.0" />
-
-        <TextView
-            android:id="@+id/two_total"
-            style="@style/stats_num_style"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="@string/two_twelve_text"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.76"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView5" />
+            app:layout_constraintVertical_bias="0.36" />
 
         <TextView
             android:id="@+id/two_twelve"
             style="@style/stats_num_style"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
             android:hint="@string/two_twelve_text"
-            android:textSize="14sp"
+            android:textAlignment="center"
+            android:textColor="#FC776A"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.93"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView5"
+            app:layout_constraintVertical_bias="0.53999996" />
+
+        <TextView
+            android:id="@+id/two_total"
+            style="@style/stats_num_style"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:hint="@string/two_twelve_text"
+            android:textAlignment="center"
+            android:textColor="#FC776A"
+            android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="@+id/textView4"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.87"
+            app:layout_constraintHorizontal_bias="0.93"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/textView4"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintTop_toBottomOf="@+id/textView5"
+            app:layout_constraintVertical_bias="0.63" />
 
         <Button
             android:id="@+id/button"
-            style="@style/button_style"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/new_button_style"
+            android:background="@drawable/stats_button"
+            android:onClick="@{() -> statsVM.ClearStats()}"
             android:text="@string/Clear_button_text"
-           android:onClick="@{() -> statsVM.ClearStats()}"
+            android:textColor="#FC776A"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView4"
-            app:layout_constraintVertical_bias="0.92" />
+            app:layout_constraintVertical_bias="1.0" />
     </androidx.constraintlayout.widget.ConstraintLayout>
     </layout>

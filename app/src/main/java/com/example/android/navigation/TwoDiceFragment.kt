@@ -18,6 +18,7 @@ import com.example.android.navigation.databinding.TwoDiceFragmentBinding
 class TwoDiceFragment : Fragment() {
 
            private  lateinit var viewModel : TwoDiceViewModel
+            private val myColor:Int = Color.parseColor("#EEA47F")
 
     //Inflating and Returning the View with DataBindingUtil
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -84,7 +85,7 @@ class TwoDiceFragment : Fragment() {
 
         else
         {
-            binding.totalText.setTextColor(Color.BLACK)
+            binding.totalText.setTextColor(myColor)
             binding.totalText.text = value.toString()
         }
 

@@ -32,43 +32,46 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
-            android:fontFamily="@font/rammetto_one"
+            android:fontFamily="@font/francois_one"
             android:text="@string/Choose_num_of_dices"
+            android:textColor="#3C1053"
             android:textAlignment="center"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="@+id/button_two"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.51" />
+            app:layout_constraintVertical_bias="0.53" />
 
         <Button
             android:id="@+id/button_one"
-            style="@style/button_style"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/new_button_style"
+            android:textColor="#041E42"
             android:text="@string/button_one_text"
             app:layout_constraintBottom_toTopOf="@+id/button_two"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/home_text"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintVertical_bias="1.0"
+            android:background="@drawable/home_button"/>
 
         <Button
             android:id="@+id/button_two"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="250dp"
+            android:layout_height="60dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:text="@string/button_two_text"
-            android:textColor="@color/colorAccent"
+            android:textColor="#041E42"
+            android:textSize="20sp"
             android:textColorHint="@color/colorAccent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.77" />
+            app:layout_constraintVertical_bias="0.77"
+            android:background="@drawable/home_button"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

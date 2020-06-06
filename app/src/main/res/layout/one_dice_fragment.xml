@@ -11,7 +11,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraint_layout_one"
-        style="@style/layout_style"
+        style="@style/layout_style_modes"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:onClick="@{ () -> oneDiceVM.rollValue() }">
@@ -19,9 +19,7 @@
 
         <Button
             android:id="@+id/stats_button"
-            style="@style/button_style"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/new_button_style"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
@@ -29,13 +27,14 @@
             android:shadowColor="#BD2A2A"
             android:text="@string/stats_button"
             android:onClick="@{() -> oneDiceVM.ontoStats()}"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="#EEA47F"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/total_text_one"
-            app:layout_constraintVertical_bias="0.85" />
+            app:layout_constraintVertical_bias="0.85"
+            android:background="@drawable/modes_button"/>
 
         <ImageView
             android:id="@+id/dice_image_one"
@@ -55,13 +54,17 @@
 
         <TextView
             android:id="@+id/total_text_one"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
-            android:text="@string/total_add_text"
-            android:textSize="36sp"
+            android:fontFamily="@font/courgette"
+            android:hint="@string/total_add_text"
+            android:textColorHint="@color/modes_text_color"
+            android:textAlignment="center"
+            android:textColor="#EEA47F"
+            android:textSize="40sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

@@ -44,7 +44,7 @@
 
     <string name="total_text">TOTAl</string>
     <string name="rollbutton_text">ROLL</string>
-    <string name="total_add_text">TOTAL</string>
+    <string name="total_add_text">Click To Roll</string>
     <string name="home_dice_image">Home Dice</string>
     <string name="Choose_num_of_dices">How many Dices do you want to roll?</string>
     <string name="button_one_text">1 Dice</string>
@@ -55,8 +55,8 @@
     <string name="two_dice_fragment_title">Two Dices</string>
     <string name="stats_text1">1 Dice Mode</string>
     <string name="stats_text2">2 Dice Mode</string>
-    <string name="One_Dice_stats">Number of times rolled: \n\nNumber of times gotten 6:</string>
-    <string name="two_Dice_stats">Number of times rolled: \n\nNumber of times gotten 12:</string>
+    <string name="One_Dice_stats">Number of times rolled: \n\nNumber of 6\'s:</string>
+    <string name="two_Dice_stats">Number of times rolled: \n\nNumber of 12\'s:</string>
     <string name="Menu_stats">Stats</string>
     <string name="stats_button">Check Stats</string>
     <string name="two_twelve_text">value</string>

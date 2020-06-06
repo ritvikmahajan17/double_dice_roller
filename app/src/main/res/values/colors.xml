@@ -16,10 +16,13 @@
   -->
 
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorPrimary">#041E42</color>
+    <color name="colorPrimaryDark">#0A264E</color>
     <color name="colorAccent">#7e53c5</color>
     <color name="youWinDark">#35A571</color>
     <color name="youWinBackground">#B7F8C9</color>
     <color name="gameOverBackground">#f8bbd0</color>
+    <color name="home_color">#AFEADC</color>
+    <color name="modes_color">#00539C</color>
+    <color name="modes_text_color">#EEA47F</color>
 </resources>

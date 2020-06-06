@@ -11,33 +11,34 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraint_layout_two"
-        style="@style/layout_style"
+        style="@style/layout_style_modes"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center_vertical"
         android:orientation="vertical"
         android:onClick="@{()-> twoDiceVM.rollValue()}"
-        tools:context=".MainActivity">
+        tools:context=".MainActivity"
+        >
 
 
         <Button
             android:id="@+id/stats_button2"
-            style="@style/button_style"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/new_button_style"
+
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
             android:shadowColor="#BD2A2A"
             android:text="@string/stats_button"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/modes_text_color"
             android:onClick="@{() -> twoDiceVM.ontoStats()}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/total_text"
-            app:layout_constraintVertical_bias="0.849" />
+            app:layout_constraintVertical_bias="0.849"
+            android:background="@drawable/modes_button"/>
 
         <ImageView
             android:id="@+id/dice1_image"
@@ -73,13 +74,17 @@
 
         <TextView
             android:id="@+id/total_text"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
 
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
-            android:text="@string/total_add_text"
+            android:fontFamily="@font/courgette"
+            android:hint="@string/total_add_text"
+            android:textColorHint="@color/modes_text_color"
+            android:textAlignment="center"
+            android:textColor="@color/modes_text_color"
             android:textSize="36sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

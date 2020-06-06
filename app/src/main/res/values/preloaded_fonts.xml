@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="preloaded_fonts" translatable="false">
+        <item>@font/lilita_one</item>
+        <item>@font/courgette</item>
+        <item>@font/francois_one</item>
         <item>@font/lato</item>
         <item>@font/lato_bold</item>
+        <item>@font/lilita_one</item>
         <item>@font/merriweather_black</item>
         <item>@font/merriweather_bold</item>
+        <item>@font/oswald</item>
         <item>@font/raleway</item>
         <item>@font/rammetto_one</item>
+        <item>@font/tillana</item>
     </array>
 </resources>
