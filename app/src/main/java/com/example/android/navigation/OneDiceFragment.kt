@@ -59,10 +59,6 @@ class OneDiceFragment : Fragment() {
              return binding.root
       }
 
-
-
-
-
   private fun whatToDisplay(binding: OneDiceFragmentBinding,value:Int){
 
 

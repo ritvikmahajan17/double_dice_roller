@@ -62,9 +62,6 @@ class DoubleDiceAdapter2 (val clickListener: DoubleDiceListener2) :androidx.recy
     }
 }
 
-
-
-
 class ViewHolder2 private constructor(val binding: LisItemRollValue2Binding) : RecyclerView.ViewHolder(binding.root) {
 
     fun bind(clickListener: DoubleDiceListener2, item: DoubleDice) {
@@ -81,16 +78,6 @@ class ViewHolder2 private constructor(val binding: LisItemRollValue2Binding) : R
         }
     }
 }
-
-//class TextViewHolder2(view: View) : RecyclerView.ViewHolder(view) {
-//    companion object {
-//        fun from(parent: ViewGroup): TextViewHolder {
-//            val layoutInflater = LayoutInflater.from(parent.context)
-//            val view = layoutInflater.inflate(R.layout.header, parent, false)
-//            return TextViewHolder(view)
-//        }
-//    }
-//}
 
 class DoubleDiceDiffCallBack2 : DiffUtil.ItemCallback<DataItem2>() {
     override fun areItemsTheSame(oldItem: DataItem2, newItem: DataItem2): Boolean {
