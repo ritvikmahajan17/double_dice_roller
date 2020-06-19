@@ -12,10 +12,16 @@
         tools:layout="@layout/home_page">
         <action
             android:id="@+id/action_homeFragment_to_twoDiceFragment"
-            app:destination="@id/twoDiceFragment" />
+            app:destination="@id/twoDiceFragment"
+            app:popUpTo="@id/homeFragment" />
         <action
             android:id="@+id/action_homeFragment_to_oneDiceFragment2"
-            app:destination="@id/oneDiceFragment" />
+            app:destination="@id/oneDiceFragment"
+            app:popUpTo="@id/homeFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_statsFragment"
+            app:destination="@id/statsFragment"
+            app:popUpTo="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/oneDiceFragment"
@@ -23,10 +29,9 @@
         android:label="@string/one_dice_fragment_title"
         tools:layout="@layout/one_dice_fragment">
         <action
-            android:id="@+id/action_oneDiceFragment_to_statsFragment"
-            app:destination="@id/statsFragment"
-            app:popUpTo="@id/oneDiceFragment"
-            app:popUpToInclusive="true" />
+            android:id="@+id/action_oneDiceFragment_to_allRollFragment"
+            app:destination="@id/allRollFragment"
+            app:popUpTo="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/twoDiceFragment"
@@ -34,10 +39,9 @@
         android:label="@string/two_dice_fragment_title"
         tools:layout="@layout/two_dice_fragment">
         <action
-            android:id="@+id/action_twoDiceFragment_to_statsFragment"
-            app:destination="@id/statsFragment"
-            app:popUpTo="@id/twoDiceFragment"
-            app:popUpToInclusive="true" />
+            android:id="@+id/action_twoDiceFragment_to_allRollFragment2"
+            app:destination="@id/allRollFragment2"
+            app:popUpTo="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/AboutFragment"
@@ -53,4 +57,14 @@
         android:name="com.example.android.navigation.StatsFragment"
         android:label="@string/Stats_pageName"
         tools:layout="@layout/stats_layout"/>
+    <fragment
+        android:id="@+id/allRollFragment"
+        android:name="com.example.android.navigation.AllRollFragment"
+        android:label="@string/all_rolls1_title"
+        tools:layout="@layout/all_rolls" />
+    <fragment
+        android:id="@+id/allRollFragment2"
+        android:name="com.example.android.navigation.AllRollFragment2"
+        android:label="@string/all_rolls2_title"
+        tools:layout="@layout/all_rolls2" />
 </navigation>

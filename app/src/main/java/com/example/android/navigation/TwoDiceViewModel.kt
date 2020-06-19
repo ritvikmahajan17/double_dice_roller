@@ -12,31 +12,37 @@ class TwoDiceViewModel (
         val database: DiceDao,
         application: Application) : AndroidViewModel(application)
 {
+
     private var viewModelJob = Job()
 
     private val uiScope = CoroutineScope(Dispatchers.Main +  viewModelJob)
+
+     val rolls2 = database.getAllRolls()
 
     private val randomNum = MutableLiveData<Int>() //used in vm
         val _randomNum : LiveData<Int>                  //used in ui
              get() = randomNum
 
-    private val _gotoStats = MutableLiveData<Boolean>()
-    val gotoStats : LiveData<Boolean>
-        get() = _gotoStats
+    private val _gotoAllRolls = MutableLiveData<Boolean>()
+    val gotoAllRolls : LiveData<Boolean>
+        get() = _gotoAllRolls
 
     fun ontoStats()
     {
-        _gotoStats.value = true
+        _gotoAllRolls.value = true
     }
 
+    var n1:Int = -1
+    var n2:Int = -1
+
     fun getNum1():Int{
-        val num1 =java.util.Random().nextInt(6) + 1
-        return num1
+         n1= java.util.Random().nextInt(6) + 1
+            return n1
     }
 
     fun getNum2():Int{
-        val num2 =java.util.Random().nextInt(6) + 1
-        return num2
+         n2= java.util.Random().nextInt(6) + 1
+            return n2
     }
 
     fun getValue():Int? {
@@ -48,9 +54,13 @@ class TwoDiceViewModel (
 
         uiScope.launch {
             val newRoll = DoubleDice()
+            val value = getValue()
+            newRoll.rollValue_mode2_d1 =n1
+            newRoll.rollValue_mode2_d2 =n2
+            newRoll.rollValue_mode2 = value
                 insert(newRoll)
 
-            if (getValue()==12)
+            if (value==12)
               updateTwelve()
 
             else {

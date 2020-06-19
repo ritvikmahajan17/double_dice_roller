@@ -42,9 +42,9 @@ class TwoDiceFragment : Fragment() {
                 display(binding,value)
             })
 
-        viewModel.gotoStats.observe(this, Observer { value ->
+        viewModel.gotoAllRolls.observe(this, Observer { value ->
             if(value)
-                findNavController().navigate(TwoDiceFragmentDirections.actionTwoDiceFragmentToStatsFragment())
+                findNavController().navigate(TwoDiceFragmentDirections.actionTwoDiceFragmentToAllRollFragment2())
 
         })
         setHasOptionsMenu(true)
@@ -56,7 +56,7 @@ class TwoDiceFragment : Fragment() {
      private fun display(binding:TwoDiceFragmentBinding,value:Int)
     {
 
-        val drawableResource1 = when(viewModel.getNum1()){
+        val drawableResource1 = when(viewModel.n1){
             1-> R.drawable.dice_1
             2-> R.drawable.dice_2
             3-> R.drawable.dice_3
@@ -66,7 +66,7 @@ class TwoDiceFragment : Fragment() {
         }
 
 
-        val drawableResource2 = when(viewModel.getNum2()) {
+        val drawableResource2 = when(viewModel.n2) {
             1 -> R.drawable.dice_1
             2 -> R.drawable.dice_2
             3 -> R.drawable.dice_3

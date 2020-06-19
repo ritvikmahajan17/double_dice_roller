@@ -27,7 +27,8 @@ class HomeFragment : Fragment() {
         binding.buttonTwo.setOnClickListener(
                 Navigation.createNavigateOnClickListener(R.id.action_homeFragment_to_twoDiceFragment))
 
-
+        binding.buttonAllRolls.setOnClickListener(
+                Navigation.createNavigateOnClickListener(R.id.action_homeFragment_to_statsFragment))
 
         setHasOptionsMenu(true)
         return binding.root

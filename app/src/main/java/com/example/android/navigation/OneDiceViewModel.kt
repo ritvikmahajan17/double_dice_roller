@@ -24,28 +24,31 @@ class OneDiceViewModel (
     val _randomNum : LiveData<Int>                  //used in ui
      get() = randomNum
 
-    private val _gotoStats = MutableLiveData<Boolean>()
-     val gotoStats : LiveData<Boolean>
-      get() = _gotoStats
+    val rolls1 = database.getAllRolls()
 
-    fun ontoStats()
+    private val _gotoAllRolls = MutableLiveData<Boolean>()
+     val gotoAllRolls : LiveData<Boolean>
+      get() = _gotoAllRolls
+
+    fun ontoAllRolls()
     {
-        _gotoStats.value = true
+        _gotoAllRolls.value = true
     }
 
-
-     fun getValue():Int? {
+    fun getValue():Int? {
         randomNum.value= java.util.Random().nextInt(6) + 1
-                return randomNum.value
+          return randomNum.value
     }
 
     fun rollValue() {
 
         uiScope.launch {
             val newRoll = DoubleDice()
+            val value: Int?  = getValue()
+            newRoll.rollValue_mode1 = value
             insert(newRoll)
 
-            if(getValue() == 6) {
+            if(value == 6) {
                 updateSix()
                }
 
@@ -73,6 +76,20 @@ class OneDiceViewModel (
         withContext(Dispatchers.IO) {
 
             database.updateSix()
+        }
+    }
+
+    private suspend fun getValue_mode1(value:Int?){
+        withContext(Dispatchers.IO){
+
+            database.getValue1(value)
+        }
+    }
+
+    private suspend fun update(newRoll:DoubleDice) {
+        withContext(Dispatchers.IO) {
+
+            database.update(newRoll)
         }
     }
 

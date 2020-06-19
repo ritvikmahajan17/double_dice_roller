@@ -16,7 +16,7 @@
 
 <resources>
     <string name="app_name">Double Dice Roller</string>
-    <string name="game_over">Game Over</string>
+    <string name="header_text">Recent Rolls</string>
     <string name="try_again">Try Again?</string>
     <string name="position">Position</string>
     <string name="select_an_avatar">Select an Avatar</string>
@@ -63,4 +63,7 @@
     <string name="Stats_pageName">Stats</string>
     <string name="about_pageName">About</string>
     <string name="Clear_button_text">CLEAR STATS</string>
+    <string name="all_rolls_button_text">ALL ROLLS</string>
+    <string name="all_rolls1_title">ALL ROLLS</string>
+    <string name="all_rolls2_title">ALL ROLLS</string>
 </resources>

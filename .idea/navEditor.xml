@@ -29,6 +29,30 @@
                       </LayoutPositions>
                     </value>
                   </entry>
+                  <entry key="allRollFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="483" />
+                            <option name="y" value="-91" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="allRollFragment2">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="482" />
+                            <option name="y" value="196" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
                   <entry key="homeFragment">
                     <value>
                       <LayoutPositions>
@@ -41,6 +65,11 @@
                         <option name="myPositions">
                           <map>
                             <entry key="action_homeFragment_to_oneDiceFragment2">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                            <entry key="action_homeFragment_to_statsFragment">
                               <value>
                                 <LayoutPositions />
                               </value>
@@ -66,12 +95,7 @@
                         </option>
                         <option name="myPositions">
                           <map>
-                            <entry key="action_oneDiceFragment_to_homeFragment">
-                              <value>
-                                <LayoutPositions />
-                              </value>
-                            </entry>
-                            <entry key="action_oneDiceFragment_to_statsFragment">
+                            <entry key="action_oneDiceFragment_to_allRollFragment">
                               <value>
                                 <LayoutPositions />
                               </value>
@@ -86,8 +110,8 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="504" />
-                            <option name="y" value="29" />
+                            <option name="x" value="-18" />
+                            <option name="y" value="478" />
                           </Point>
                         </option>
                       </LayoutPositions>
@@ -104,12 +128,7 @@
                         </option>
                         <option name="myPositions">
                           <map>
-                            <entry key="action_twoDiceFragment_to_homeFragment">
-                              <value>
-                                <LayoutPositions />
-                              </value>
-                            </entry>
-                            <entry key="action_twoDiceFragment_to_statsFragment">
+                            <entry key="action_twoDiceFragment_to_allRollFragment2">
                               <value>
                                 <LayoutPositions />
                               </value>

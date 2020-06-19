@@ -29,16 +29,16 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
-            android:shadowColor="#BD2A2A"
-            android:text="@string/stats_button"
-            android:textColor="@color/modes_text_color"
+            android:background="@drawable/modes_button"
             android:onClick="@{() -> twoDiceVM.ontoStats()}"
+            android:shadowColor="#BD2A2A"
+            android:text="@string/all_rolls_button_text"
+            android:textColor="@color/modes_text_color"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/total_text"
-            app:layout_constraintVertical_bias="0.849"
-            android:background="@drawable/modes_button"/>
+            app:layout_constraintVertical_bias="0.849" />
 
         <ImageView
             android:id="@+id/dice1_image"

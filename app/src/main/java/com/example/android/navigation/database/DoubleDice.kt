@@ -20,7 +20,18 @@ data class  DoubleDice (
         var noSix:Int = 0,
 
         @ColumnInfo(name = "twelve_roll")
-        var noTwelve:Int = 0
+        var noTwelve:Int = 0,
 
+        @ColumnInfo(name = "roll_value_mode1")
+        var rollValue_mode1:Int? = null,
+
+        @ColumnInfo(name = "roll_value_mode2")
+        var rollValue_mode2:Int? = null,
+
+        @ColumnInfo(name = "roll_value_mode2_d1")
+        var rollValue_mode2_d1:Int? = 0,
+
+        @ColumnInfo(name = "roll_value_mode2_d2")
+        var rollValue_mode2_d2:Int? = 0
 
 )

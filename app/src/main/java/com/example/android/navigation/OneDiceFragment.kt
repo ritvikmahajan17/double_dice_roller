@@ -1,5 +1,6 @@
 package com.example.android.navigation
 
+import android.content.Context
 import android.content.Intent
 import android.content.res.ColorStateList
 import android.graphics.Color
@@ -8,6 +9,7 @@ import android.util.Log
 import android.view.*
 import androidx.fragment.app.Fragment
 import android.widget.TextView
+import android.widget.Toast
 import androidx.core.app.ShareCompat
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
@@ -18,10 +20,11 @@ import androidx.navigation.fragment.findNavController
 import com.example.android.navigation.database.DoubleDiceDatabase
 import com.example.android.navigation.databinding.OneDiceFragmentBinding
 
+//lateinit var viewModel : OneDiceViewModel
 
 class OneDiceFragment : Fragment() {
 
-    private  lateinit var viewModel : OneDiceViewModel
+    private lateinit var viewModel : OneDiceViewModel
     private val myColor:Int = Color.parseColor("#EEA47F")
 
 
@@ -46,13 +49,11 @@ class OneDiceFragment : Fragment() {
 
         })
 
-        viewModel.gotoStats.observe(this, Observer { value ->
+        viewModel.gotoAllRolls.observe(this, Observer { value ->
             if(value)
-                findNavController().navigate(OneDiceFragmentDirections.actionOneDiceFragmentToStatsFragment())
+                findNavController().navigate(OneDiceFragmentDirections.actionOneDiceFragmentToAllRollFragment())
 
         })
-
-
 
         setHasOptionsMenu(true)
              return binding.root

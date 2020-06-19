@@ -73,5 +73,20 @@
             app:layout_constraintVertical_bias="0.77"
             android:background="@drawable/home_button"/>
 
+        <Button
+            android:id="@+id/button_all_rolls"
+            android:layout_width="250dp"
+            android:layout_height="60dp"
+            android:background="@drawable/home_button"
+            android:text="@string/stats_button"
+            android:textColor="#041E42"
+            android:textColorHint="@color/colorAccent"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_two"
+            app:layout_constraintVertical_bias="0.31" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
