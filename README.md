@@ -2,7 +2,7 @@
 
 # Double Dice Roller 
 
-Made by using MVVM architecture and connected with SQLite for database Requirements with Share option included.
+Made by using MVVM architecture with RecyclerView and connected with SQLite for database Requirements with Share option included.
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/56093481/85117384-69247400-b23c-11ea-8b4f-a1e67883d8d1.png" width="250" height="455"> 
